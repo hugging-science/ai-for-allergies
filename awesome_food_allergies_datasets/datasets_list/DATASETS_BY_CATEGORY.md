@@ -1,8 +1,4 @@
-# Awesome Food Allergy Datasets 
-
-> A curated list of datasets, databases, and resources for food allergy research, allergen identification, drug development, and clinical applications.
-
-<!-- DATASETS_START -->
+# Datasets by Category
 
 ## Allergen Identification & Prediction
 
@@ -16,6 +12,7 @@
 | [CHILD cohort](https://www.nature.com/articles/s41467-023-40336-4#data-availability) | Multi-omics; microbiome maturation predicts allergic disease |  | [https://www.nature.com/articles/s41467-023-40336-4#data-availability](https://www.nature.com/articles/s41467-023-40336-4#data-availability) | Allergen Identification, Allergenicity Assessment | Gated |
 | [WHO/IUIS Allergen Nomenclature Database](https://pubmed.ncbi.nlm.nih.gov/29625844/) | The WHO/IUIS Allergen Nomenclature is the authoritative system for naming allergenic proteins, approved by the World Health Organization and International Union of Immunological Societies. Established in 1984, this sub-committee maintains a unique, systematic nomenclature based on the Linnaean taxonomy for proteins causing IgE-mediated allergic reactions, supporting global consistency in allergen research and publication | [https://allergen.org/](https://allergen.org/) | [https://pubmed.ncbi.nlm.nih.gov/29625844/](https://pubmed.ncbi.nlm.nih.gov/29625844/) | Text Mining | Open source |
 
+
 ## Computational Method Development
 
 | Name | Description | Source | License | Tags | Access |
@@ -28,6 +25,7 @@
 | Allergen Chip data challenge | The goal of the competition was to develop Machine Learning models that can predict the presence and severity of an allergic disease based on this personalized profile. The dataset has been constructed from data of more than 4,000 patients includes tabular data associated with image files. | [https://github.com/Trustii-team/AllergenChip](https://github.com/Trustii-team/AllergenChip) |  | Risk Stratification, Severity Assessment | Gated |
 | [TIP Dataset](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0283141) | Tolerance Induction Program dataset containing data from 530 pedriatic patients. From "Food anaphylaxis diagnostic marker compilation in machine learning design and validation" | [https://github.com/TPIRC/ai_paper_2022](https://github.com/TPIRC/ai_paper_2022) | [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0283141](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0283141) | Risk Stratification, Severity Assessment | Open source |
 
+
 ## Cross-Reactivity Analysis
 
 | Name | Description | Source | License | Tags | Access |
@@ -38,6 +36,7 @@
 | [AllergenAI](https://pmc.ncbi.nlm.nih.gov/articles/PMC11230160/) | Allergenicity prediction based on protein sequences. Processed data from SDAP 2.0, COMPARE, and AlgPred 2 | [https://compbio.uth.edu/AllergenAI/](https://compbio.uth.edu/AllergenAI/) | [https://pmc.ncbi.nlm.nih.gov/articles/PMC11230160/](https://pmc.ncbi.nlm.nih.gov/articles/PMC11230160/) | Allergen Identification, Allergenicity Assessment | Open source |
 | Allergen Family Database | A curated database that classifies known allergens into protein families to support analysis of allergenicity and cross-reactivity across sources and exposure routes. It integrates entries from WHO/IUIS Allergen Nomenclature and AllergenOnline with Pfam domain annotations, providing family-level pages with biochemical descriptions, allergological significance, and links to primary records and references. | [https://www.meduniwien.ac.at/allfam/](https://www.meduniwien.ac.at/allfam/) |  | Allergen Identification, Allergenicity Assessment, Drug Design, Target Interaction, Structural Analysis | Open source |
 | Alleropedia Database for Allergens | The Alleropedia database is a comprehensive metadatabase consolidating 13,146 allergen records from six freely accessible sources, including major allergen databases like COMPARE, AllergenOnline, WHO/IUIS, and Allergome. It offers a user-friendly web interface and additional features such as data integration with sources like NCBI, facilitating easy access, analysis, and navigation of allergen-related information for researchers and clinician | [https://github.com/maitreyeepaliwal/Alleropedia-Database-for-Allergens](https://github.com/maitreyeepaliwal/Alleropedia-Database-for-Allergens) |  | Allergen Identification, Allergenicity Assessment, Cross-Reactivity Modeling, Epitope Mapping, Structural Analysis | Open source |
+
 
 ## Drug & Immunotherapy Development
 
@@ -78,6 +77,7 @@
 | Open Food Facts | The Open Food Facts database is a large, publicly accessible collection of detailed product information including ingredients, nutrition, and labeling, available in multiple data formats with open licenses for broad reuse in food transparency and research.This dataset mainly supports food-related analyses including allergen detection, labeling validation, chemical and nutritional content analysis, and research into hypoallergenic or alternative food products | [https://world.openfoodfacts.org/data](https://world.openfoodfacts.org/data) |  | Ingredient Analysis, Labeling Compliance, Property Prediction, Treatment Planning, Product Development, Alternative Ingredients | Open source |
 | [IEDB (Immune Epitope Database)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3042621) | Comprehensive database containing over 1.6 million immune epitopes including antibody and T cell epitopes for allergens, with analysis and prediction tools | [https://www.iedb.org/](https://www.iedb.org/) | [https://pmc.ncbi.nlm.nih.gov/articles/PMC3042621](https://pmc.ncbi.nlm.nih.gov/articles/PMC3042621) | Epitope Mapping, Target Interaction, Drug Design, Product Development | Open source |
 
+
 ## Food Product Development & Safety
 
 | Name | Description | Source | License | Tags | Access |
@@ -91,6 +91,7 @@
 | Food Ingredients and Allergens | This Food Allergens dataset contains 400 records detailing food products, their ingredients, associated allergens, and allergen presence prediction, supporting allergen detection and analysis for diverse applications. | [https://www.kaggle.com/datasets/uom190346a/food-ingredients-and-allergens](https://www.kaggle.com/datasets/uom190346a/food-ingredients-and-allergens) |  | Allergen Identification, Ingredient Analysis, Allergenicity Assessment, Text Mining | Open source |
 | [ProPepper](https://pubmed.ncbi.nlm.nih.gov/26450949/) | ProPepper is a database of cereal prolamin epitopes, peptides and proteins for expert users that are dealing with protein chemistry, proteomics and mass spectrometry, method developments and related applications in food science, agricultural breeding or medical studies. | [https://ngdc.cncb.ac.cn/databasecommons/database/id/1686](https://ngdc.cncb.ac.cn/databasecommons/database/id/1686) | [https://pubmed.ncbi.nlm.nih.gov/26450949/](https://pubmed.ncbi.nlm.nih.gov/26450949/) | Ingredient Analysis, Product Development | Open source |
 | Allergen Peptide Browser | Allergen Detection using Mass Spectrometry (MS) | [https://www.allergenpeptidebrowser.org/](https://www.allergenpeptidebrowser.org/) |  | Ingredient Analysis, Product Development | Open source |
+
 
 ## Patient Management & Clinical Decision Support
 
@@ -106,4 +107,3 @@
 | FSA Allergen Database Service (UK Nut allergy Registry) | Clinical and laboratory data from patients attending a UK allergy clinic for suspected nut allergy, including reaction history, severity, and lab tests. | [https://www.nal.usda.gov/research-tools/food-safety-research-projects/allergen-database-service](https://www.nal.usda.gov/research-tools/food-safety-research-projects/allergen-database-service) |  | Risk Stratification | Gated |
 | Swiss legislation on food allergens data | This dataset is a German-language, hand-curated list of common food allergens based on Swiss legislation, compiled to support allergen identification and text matching for developers and researchers, with a focus on enabling structured, multilingual allergen data relevant to Switzerland | [https://github.com/foodopendata/food-allergens-ch](https://github.com/foodopendata/food-allergens-ch) |  | Allergen Identification, Ingredient Analysis, Labeling Compliance, Text Mining, Risk Stratification | Open source |
 
-<!-- DATASETS_END -->
