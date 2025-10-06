@@ -1,0 +1,3 @@
+polars
+requests
+beautifulsoup4
