@@ -1,0 +1,6 @@
+[submodule "awesome_food_allergies_datasets/awesome-food-allergy-datasets"]
+	path = awesome_food_allergies_datasets/awesome-food-allergy-datasets
+	url = https://github.com/AI-For-Food-Allergies/awesome-food-allergy-datasets
+[submodule "awesome_food_allergies_datasets/datasets-navigator-app"]
+	path = awesome_food_allergies_datasets/datasets-navigator-app
+	url = https://github.com/AI-For-Food-Allergies/datasets-navigator-app

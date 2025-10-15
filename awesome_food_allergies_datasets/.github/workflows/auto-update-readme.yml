@@ -1,0 +1,82 @@
+name: Auto-Update README Stats
+
+on:
+  pull_request:
+    paths:
+      - "README.md"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pandas
+
+      - name: Update README from TSV (preserves manual entries)
+        run: |
+          python .github/scripts/convert_tsv_to_markdown.py
+          echo "✅ README updated from TSV, manual entries preserved"
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected:"
+            git diff --stat
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: auto-update README from TSV/manual changes
+
+          🤖 Automated commit by GitHub Actions
+          - Updated stats section with latest dataset counts
+          - TSV-managed sections synchronized
+          - Manual entries preserved"
+          git push origin ${{ github.head_ref }}
+
+      - name: Post success comment
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `## ✅ README Auto-Updated
+
+              **Stats have been recalculated and README updated!**
+
+              - TSV-managed sections: ✅ Updated
+              - Manual entries: ✅ Preserved
+              - Stats: ✅ Recalculated from complete README
+
+              **Note:** You can add manual datasets after the \`<!-- TSV_END -->\` marker in each category. The validation workflow will check your changes separately.`
+            })

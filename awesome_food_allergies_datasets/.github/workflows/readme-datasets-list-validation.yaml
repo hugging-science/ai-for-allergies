@@ -1,0 +1,42 @@
+name: README Datasets list validation
+
+on:
+  pull_request:
+    paths:
+      - "README.md"
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: collect-commits
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        
+      - name: python-setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: check-readme
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          REPO: ${{github.repository}}
+          FILE_PATH: "README.md"
+          START_TOKEN: <!-- CATEGORY_Drug & Immunotherapy Development_START -->
+          END_TOKEN: <!-- CATEGORY_Drug & Immunotherapy Development_END -->
+          BASE_REF: ${{github.event.pull_request.base.ref}}
+          HEAD_REF: ${{github.event.pull_request.head.ref}}
+          FAIL_ON_INVALID: 'false'                    # 'true' to make the job fail if invalid
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: python .github/scripts/validate_datasets_list.py
